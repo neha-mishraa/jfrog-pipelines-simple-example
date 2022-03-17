@@ -1,34 +1,10 @@
 template: true 
 valuesFilePath: ./values.yml
 
-resources:
-  - name: myFirstRepo
-    type: GitRepo
-    configuration:
-      gitProvider: {{ .Values.myRepo.gitProvider }}
-      path: {{ .Values.myRepo.path }}
-      buildOn:
-        commit: true
-      branches:
-        include: master
-  - name: propertyBag
-    type: PropertyBag
-    configuration:
-      foo: bar
-      foo1: bar1
-      foo2: bar2
-
 pipelines:
   - name: test_pipeline1
     steps:
       - name: step1
-        type: Bash
-        configuration:
-          inputResources:
-            - name: myFirstRepo
-          outputResources:
-            - name: propertyBag
         execution:
           onExecute:
             - echo "P1"
-            - write_output propertyBag "foo=$run_number"
