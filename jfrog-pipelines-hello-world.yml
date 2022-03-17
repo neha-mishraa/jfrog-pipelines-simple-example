@@ -2,9 +2,10 @@ template: true
 valuesFilePath: ./values.yml
 
 pipelines:
-  - name: test_pipeline1
+  - name: test_pipeline3
     steps:
-      - name: step1
+      - name: step4
+        type: Bash
         execution:
           onExecute:
-            - echo "P1"
+            - echo "P6"
