@@ -1,6 +1,13 @@
 template: true 
 valuesFilePath: ./values.yml
 
+resources:
+  - name: myFirstRepo2
+    type: GitRepo
+    configuration:
+      gitProvider: {{ .Values.myRepo.gitProvider }}
+      path: {{ .Values.myRepo.path }}
+
 pipelines:
   - name: test_pipeline3
     steps:
