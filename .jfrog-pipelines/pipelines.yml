@@ -18,7 +18,7 @@ resources:
     configuration:
       interval: '*/5 * * * *'
       branches:
-        include: [A-Za-z0-9]+
+        include: '[A-Za-z0-9]+'
   - name: artifactory_product_release_cron2
     type: CronTrigger
     configuration:
