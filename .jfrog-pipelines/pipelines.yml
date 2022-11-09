@@ -19,6 +19,84 @@ resources:
       interval: '*/5 * * * *'
       branches:
         include: ^preRelease/jfrtp-.+$|master
+  - name: artifactory_product_release_cron2
+    type: CronTrigger
+    configuration:
+      interval: '*/5 * * * *'
+      branches:
+        include: ^preRelease/jfrtp-.+$|master
+  - name: artifactory_product_release_cron3
+    type: CronTrigger
+    configuration:
+      interval: '*/5 * * * *'
+      branches:
+        include: ^preRelease/jfrtp-.+$|master
+  - name: artifactory_product_release_cron4
+    type: CronTrigger
+    configuration:
+      interval: '*/5 * * * *'
+      branches:
+        include: ^preRelease/jfrtp-.+$|master
+  - name: artifactory_product_release_cron5
+    type: CronTrigger
+    configuration:
+      interval: '*/5 * * * *'
+      branches:
+        include: ^preRelease/jfrtp-.+$|master
+  - name: artifactory_product_release_cron6
+    type: CronTrigger
+    configuration:
+      interval: '*/5 * * * *'
+      branches:
+        include: ^preRelease/jfrtp-.+$|master
+  - name: artifactory_product_release_cron7
+    type: CronTrigger
+    configuration:
+      interval: '*/5 * * * *'
+      branches:
+        include: ^preRelease/jfrtp-.+$|master
+  - name: artifactory_product_release_cron8
+    type: CronTrigger
+    configuration:
+      interval: '*/5 * * * *'
+      branches:
+        include: ^preRelease/jfrtp-.+$|master
+  - name: artifactory_product_release_cron9
+    type: CronTrigger
+    configuration:
+      interval: '*/5 * * * *'
+      branches:
+        include: ^preRelease/jfrtp-.+$|master
+  - name: artifactory_product_release_cron10
+    type: CronTrigger
+    configuration:
+      interval: '*/5 * * * *'
+      branches:
+        include: ^preRelease/jfrtp-.+$|master
+  - name: artifactory_product_release_cron11
+    type: CronTrigger
+    configuration:
+      interval: '*/5 * * * *'
+      branches:
+        include: ^preRelease/jfrtp-.+$|master
+  - name: artifactory_product_release_cron12
+    type: CronTrigger
+    configuration:
+      interval: '*/5 * * * *'
+      branches:
+        include: ^preRelease/jfrtp-.+$|master
+  - name: artifactory_product_release_cron13
+    type: CronTrigger
+    configuration:
+      interval: '*/5 * * * *'
+      branches:
+        include: ^preRelease/jfrtp-.+$|master
+  - name: artifactory_product_release_cron14
+    type: CronTrigger
+    configuration:
+      interval: '*/5 * * * *'
+      branches:
+        include: ^preRelease/jfrtp-.+$|master
 
 pipelines:
   - name: pipeline_scheduled_triggers
@@ -37,7 +115,127 @@ pipelines:
         type: Bash
         configuration:
           inputResources:
-            - name: artifactory_product_release_cron
+            - name: artifactory_product_release_cron2
+        execution:
+          onExecute:
+            - printenv
+  - name: pipeline_scheduled_triggers3
+    steps:
+      - name: step_2
+        type: Bash
+        configuration:
+          inputResources:
+            - name: artifactory_product_release_cron3
+        execution:
+          onExecute:
+            - printenv
+  - name: pipeline_scheduled_triggers4
+    steps:
+      - name: step_2
+        type: Bash
+        configuration:
+          inputResources:
+            - name: artifactory_product_release_cron4
+        execution:
+          onExecute:
+            - printenv
+  - name: pipeline_scheduled_triggers5
+    steps:
+      - name: step_2
+        type: Bash
+        configuration:
+          inputResources:
+            - name: artifactory_product_release_cron5
+        execution:
+          onExecute:
+            - printenv
+  - name: pipeline_scheduled_triggers6
+    steps:
+      - name: step_2
+        type: Bash
+        configuration:
+          inputResources:
+            - name: artifactory_product_release_cron6
+        execution:
+          onExecute:
+            - printenv
+  - name: pipeline_scheduled_triggers7
+    steps:
+      - name: step_2
+        type: Bash
+        configuration:
+          inputResources:
+            - name: artifactory_product_release_cron7
+        execution:
+          onExecute:
+            - printenv
+  - name: pipeline_scheduled_triggers8
+    steps:
+      - name: step_2
+        type: Bash
+        configuration:
+          inputResources:
+            - name: artifactory_product_release_cron8
+        execution:
+          onExecute:
+            - printenv
+  - name: pipeline_scheduled_triggers9
+    steps:
+      - name: step_2
+        type: Bash
+        configuration:
+          inputResources:
+            - name: artifactory_product_release_cron9
+        execution:
+          onExecute:
+            - printenv
+  - name: pipeline_scheduled_triggers10
+    steps:
+      - name: step_2
+        type: Bash
+        configuration:
+          inputResources:
+            - name: artifactory_product_release_cron10
+        execution:
+          onExecute:
+            - printenv
+  - name: pipeline_scheduled_triggers11
+    steps:
+      - name: step_2
+        type: Bash
+        configuration:
+          inputResources:
+            - name: artifactory_product_release_cron11
+        execution:
+          onExecute:
+            - printenv
+  - name: pipeline_scheduled_triggers12
+    steps:
+      - name: step_2
+        type: Bash
+        configuration:
+          inputResources:
+            - name: artifactory_product_release_cron12
+        execution:
+          onExecute:
+            - printenv
+  - name: pipeline_scheduled_triggers13
+    steps:
+      - name: step_2
+        type: Bash
+        configuration:
+          inputResources:
+            - name: artifactory_product_release_cron13
+        execution:
+          onExecute:
+            - printenv
+  - name: pipeline_scheduled_triggers14
+    steps:
+      - name: step_2
+        type: Bash
+        configuration:
+          inputResources:
+            - name: artifactory_product_release_cron14
         execution:
           onExecute:
             - printenv
