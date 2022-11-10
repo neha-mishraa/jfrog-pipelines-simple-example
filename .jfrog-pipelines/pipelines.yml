@@ -18,85 +18,85 @@ resources:
     configuration:
       interval: '*/5 * * * *'
       branches:
-        include: '[A-Za-z0-9]+'
+        include: master5
   - name: artifactory_product_release_cron2
     type: CronTrigger
     configuration:
       interval: '*/5 * * * *'
       branches:
-        include: '[A-Za-z0-9]+'
+        include: master5
   - name: artifactory_product_release_cron3
     type: CronTrigger
     configuration:
       interval: '*/5 * * * *'
       branches:
-        include: '[A-Za-z0-9]+'
+        include: master5
   - name: artifactory_product_release_cron4
     type: CronTrigger
     configuration:
       interval: '*/5 * * * *'
       branches:
-        include: '[A-Za-z0-9]+'
+        include: master5
   - name: artifactory_product_release_cron5
     type: CronTrigger
     configuration:
       interval: '*/5 * * * *'
       branches:
-        include: '[A-Za-z0-9]+'
+        include: master5
   - name: artifactory_product_release_cron6
     type: CronTrigger
     configuration:
       interval: '*/5 * * * *'
       branches:
-        include: '[A-Za-z0-9]+'
+        include: master5
   - name: artifactory_product_release_cron7
     type: CronTrigger
     configuration:
       interval: '*/5 * * * *'
       branches:
-        include: '[A-Za-z0-9]+'
+        include: master5
   - name: artifactory_product_release_cron8
     type: CronTrigger
     configuration:
       interval: '*/5 * * * *'
       branches:
-        include: '[A-Za-z0-9]+'
+        include: master5
   - name: artifactory_product_release_cron9
     type: CronTrigger
     configuration:
       interval: '*/5 * * * *'
       branches:
-        include: '[A-Za-z0-9]+'
+        include: master5
   - name: artifactory_product_release_cron10
     type: CronTrigger
     configuration:
       interval: '*/5 * * * *'
       branches:
-        include: '[A-Za-z0-9]+'
+        include: master5
   - name: artifactory_product_release_cron11
     type: CronTrigger
     configuration:
       interval: '*/5 * * * *'
       branches:
-        include: '[A-Za-z0-9]+'
+        include: master5
   - name: artifactory_product_release_cron12
     type: CronTrigger
     configuration:
       interval: '*/5 * * * *'
       branches:
-        include: '[A-Za-z0-9]+'
+        include: master5
   - name: artifactory_product_release_cron13
     type: CronTrigger
     configuration:
       interval: '*/5 * * * *'
       branches:
-        include: '[A-Za-z0-9]+'
+        include: master5
   - name: artifactory_product_release_cron14
     type: CronTrigger
     configuration:
       interval: '*/5 * * * *'
       branches:
-        include: '[A-Za-z0-9]+'
+        include: master5
 
 pipelines:
   - name: pipeline_scheduled_triggers
