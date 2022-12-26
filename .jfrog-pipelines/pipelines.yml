@@ -2,36 +2,41 @@ template: true
 valuesFilePath: ./values.yml
 
 resources:
-  - name: myFirstRepo
-    type: GitRepo
-    configuration:
-      gitProvider: {{ .Values.myRepo.gitProvider }}
-      path: {{ .Values.myRepo.path }}
-  - name: propertyBag
+  - name: propertyBag_1
     type: PropertyBag
     configuration:
-      foo: bar
-      foo1: bar1
-      foo2: bar2
+      runNumber: 0
+ 
+  - name: propertyBag_2
+    type: PropertyBag
+    configuration:
+      runNumber: 0
 
 pipelines:
-  - name: pipeline_scheduled_triggers
-    steps:
-      - name: step_1
+  - name: A_parent
+    steps: 
+      - name: A_test
         type: Bash
         configuration:
           inputResources:
-            - name: myFirstRepo
+            - name: propertyBag_1
+          outputResources:
+            - name: propertyBag_2
         execution:
           onExecute:
-            - printenv
-  - name: pipeline_scheduled_triggers2
-    steps:
-      - name: step_2
+            - write_output propertyBag_2 runNumber=${run_number}
+ 
+  - name: A_waitOnParent
+    configuration:
+      dependencyMode:
+        waitOnParentComplete: true
+        waitOnParentSuccess: true
+    steps: 
+      - name: B_test
         type: Bash
         configuration:
           inputResources:
-            - name: myFirstRepo
+            - name: propertyBag_2
         execution:
           onExecute:
-            - printenv
+            - echo "test"
