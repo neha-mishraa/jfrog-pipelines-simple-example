@@ -1,42 +1,37 @@
 template: true 
 valuesFilePath: ./values.yml
 
-resources:
-  - name: propertyBag_1
-    type: PropertyBag
-    configuration:
-      runNumber: 0
- 
-  - name: propertyBag_2
-    type: PropertyBag
-    configuration:
-      runNumber: 0
-
 pipelines:
-  - name: A_parent
-    steps: 
-      - name: A_test
-        type: Bash
+  - name: top_pipeline
+    steps:
+      - name: scan_controller
+        type: TriggerPipeline
         configuration:
-          inputResources:
-            - name: propertyBag_1
-          outputResources:
-            - name: propertyBag_2
+          pipelineName: scanner_pipeline
+          stepName: scan_it
+          integrations:
+            - name: myPlatformToken
+          environmentVariables:
+            scan_target:
+              default: "hello-world"
+              allowCustom: true
+              values:
+                - "vault"
+                - "redis"
+                - "postgresql"
+                - "hello-world"
         execution:
-          onExecute:
-            - write_output propertyBag_2 runNumber=${run_number}
+          onStart:
+            - set_trigger_payload pipelineVariables "scan_target=${scan_target}"
+            - set_trigger_payload stepVariables "notify=email" "uploadReport=true"
+          onComplete:
+            - echo "Final status is $nested_run_status"
  
-  - name: A_waitOnParent
-    configuration:
-      dependencyMode:
-        waitOnParentComplete: true
-        waitOnParentSuccess: true
-    steps: 
-      - name: B_test
+  - name: scanner_pipeline
+    steps:
+      - name: scan_it
         type: Bash
-        configuration:
-          inputResources:
-            - name: propertyBag_2
         execution:
           onExecute:
-            - echo "test"
+            - echo "Image to scan is $scan_target."
+            - echo "Triggered by parent step at $parent_step_url"
