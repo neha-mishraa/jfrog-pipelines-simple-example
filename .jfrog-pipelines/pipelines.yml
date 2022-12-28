@@ -9,6 +9,8 @@ pipelines:
         configuration:
           pipelineName: scanner_pipeline
           stepName: scan_it
+          integrations:
+            - name: myPlatformToken
           environmentVariables:
             scan_target:
               default: "hello-world"
@@ -19,6 +21,9 @@ pipelines:
                 - "postgresql"
                 - "hello-world"
         execution:
+          onStart:
+            - set_trigger_payload pipelineVariables "scan_target=${scan_target}"
+            - set_trigger_payload stepVariables "notify=email" "uploadReport=true"
           onComplete:
             - echo "Final status is $nested_run_status"
  
