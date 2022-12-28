@@ -19,9 +19,6 @@ pipelines:
                 - "postgresql"
                 - "hello-world"
         execution:
-          onStart:
-            - set_trigger_payload pipelineVariables "scan_target=${scan_target}"
-            - set_trigger_payload stepVariables "notify=email" "uploadReport=true"
           onComplete:
             - echo "Final status is $nested_run_status"
  
